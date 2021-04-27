@@ -157,7 +157,18 @@ ThemeData themeFromJson(String jsonTheme) {
     buttonColor: Color(themeMap['buttonColor'] ?? defaultTheme.buttonColor),
     toggleableActiveColor: Color(themeMap['toggleableActiveColor'] ?? defaultTheme.toggleableActiveColor),
     secondaryHeaderColor: Color(themeMap['secondaryHeaderColor'] ?? defaultTheme.secondaryHeaderColor),
-    textSelectionTheme: textSelectionThemeDataFromMap(themeMap['textSelectionTheme']) ?? defaultTheme.textSelectionTheme,
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Color(
+        themeMap['cursorColor'] ?? defaultTheme.textSelectionTheme.cursorColor,
+      ),
+      selectionColor: Color(
+        themeMap['selectionColor'] ?? defaultTheme.textSelectionTheme.selectionColor,
+      ),
+      selectionHandleColor: Color(
+        themeMap['selectionHandleColor'] ?? defaultTheme.textSelectionTheme.selectionHandleColor,
+      ),
+    ),
+    // ?   textSelectionThemeDataFromMap(themeMap['textSelectionTheme']) ?? defaultTheme.textSelectionTheme,
     backgroundColor: Color(themeMap['backgroundColor'] ?? defaultTheme.backgroundColor),
     dialogBackgroundColor: Color(themeMap['dialogBackgroundColor'] ?? defaultTheme.dialogBackgroundColor),
     indicatorColor: Color(themeMap['indicatorColor'] ?? defaultTheme.indicatorColor),
